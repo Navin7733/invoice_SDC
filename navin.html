@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice Generation System</title>
+  <link rel="stylesheet" href="navin.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Invoice Generation System</h1>
+    <form id="invoice-form">
+      <h2>Customer Details</h2>
+      <label for="customer-name">Name:</label>
+      <input type="text" id="customer-name" required>
+      
+      <label for="customer-address">Address:</label>
+      <textarea id="customer-address" rows="3" required></textarea>
+      
+      <h2>Item Details</h2>
+      <div id="item-list">
+        <div class="item">
+          <label for="description">Description:</label>
+          <input type="text" class="description" required>
+          
+          <label for="quantity">Quantity:</label>
+          <input type="number" class="quantity" min="1" required>
+          
+          <label for="price">Price (per unit):</label>
+          <input type="number" class="price" min="0" required>
+          
+          <label for="tax">Tax Rate (%):</label>
+          <input type="number" class="tax" min="0" required>
+        </div>
+      </div>
+      
+      <button type="button" id="add-item">Add Item</button>
+      <button type="submit">Generate Invoice</button>
+    </form>
+    <div id="invoice-preview" class="hidden">
+      <h2>Invoice</h2>
+      <div id="invoice-details"></div>
+      <button id="download-pdf">Download PDF</button>
+      <button id="print-invoice">Print</button>
+    </div>
+  </div>
+  <script src="navin.js"></script>
+</body>
+</html>
